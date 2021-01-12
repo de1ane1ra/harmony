@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./index.css">
+    </head>
+
+    <body>
+        <section class="fretboard-panel">
+            <div class="fretboard-panel-controls">
+                <label class="typo" for="fretboard-invert-x">Flip Horizontally</label>
+                <input type="checkbox" name="fretboard-invert-x" data-input-fretboard-invert-x autocomplete="none" />
+
+                <label class="typo" for="fretboard-invert-y">Flip Vertically</label>
+                <input type="checkbox" name="fretboard-invert-y" data-input-fretboard-invert-y autocomplete="none" />
+            </div>
+
+            <table class="fretboard-markers" data-fretboard-markers></table>
+            
+            <div class="pad"></div>
+
+            <table class="fretboard" data-fretboard>
+            </table>
+        </section>
+
+        <section class="keyboard-panel" data-keyboard-panel>
+            <label class="typo" for="keyboard-octaves">octaves:</label>
+            <select data-input-keyboard-octaves name="keyboard-octaves">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+            </select>
+
+            <div class="keyboard-container" data-keyboard-container>
+                <section class="keyboard" data-keyboard>
+                </section>
+            </div>
+        </section>
+
+        <script type="text/javascript" src="./index.js"></script>
+    </body>
+</html>

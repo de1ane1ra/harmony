@@ -1,0 +1,290 @@
+:root {
+    --clr-dark: #000000;
+    --clr-mid: #AAAAAA;
+    --clr-light: #FFFFFF;
+
+    --keyboard-width: 80vw;
+    --keyboard-border-width: 1px;
+    --keyboard-octaves: 4;
+    --key-count: calc(var(--keyboard-octaves) * 12);
+    --bottom-key-count: calc(var(--key-count) - 5 * var(--keyboard-octaves));
+    --keyboard-height: calc(var(--keyboard-width) * 0.1);
+    --bottom-key-width: calc(var(--keyboard-width) / var(--bottom-key-count));
+    --top-key-height: calc(var(--keyboard-height) * 0.62);
+    --top-key-width: calc(var(--bottom-key-width) * 0.55);
+    --top-key-offset: calc(-1 * (var(--top-key-width) / 2) - var(--keyboard-border-width));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.typo {
+    color: var(--clr-light);
+    font-size: 1.5rem;
+}
+
+input,
+select {
+    background-color: transparent;
+    border: 1px solid var(--clr-light);
+    padding: 1rem;
+    color: var(--clr-light);
+}
+
+html {
+    background-color: var(--clr-mid);
+    font-size: 10px;
+    font-family: sans-serif;
+    cursor: crosshair;
+}
+
+body {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.fretboard-panel-controls {
+    padding-bottom: 4rem;   
+}
+
+.fretboard-markers .header {
+    width: 8rem;
+    position: relative;
+    border: 1px solid var(--clr-light);
+    height: 2rem;
+    color: var(--clr-light);
+    font-weight: 300;
+}
+
+.fretboard,
+.fretboard-markers {
+    text-align: center;
+    width: 80vw;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.pad {
+    height: 4rem;
+}
+
+.fretboard.invert-x,
+.fretboard-markers.invert-x {
+    transform: scale(-1, 1);
+}
+
+.fretboard.invert-x .note,
+.fretboard-markers.invert-x th {
+    transform: scale(-1, 1);
+}
+
+/*[data-fretboard-note-label="C"],
+[data-key="C"] {
+    background-color: black !important;
+}*/
+
+[data-fretboard-note-label="C#"],
+[data-key="C#"] {
+    background-color: red !important;
+}
+
+/*[data-fretboard-note-label="D"],
+[data-key="D"] {
+    background-color: black !important;
+}*/
+
+[data-fretboard-note-label="D#"],
+[data-key="D#"] {
+    background-color: blue !important;
+}
+
+/*[data-fretboard-note-label="E"],
+[data-key="E"] {
+    background-color: black !important;
+}*/
+
+/*[data-fretboard-note-label="F"],
+[data-key="F"] {
+    background-color: black !important;
+}*/
+
+[data-fretboard-note-label="F#"],
+[data-key="F#"] {
+    background-color: yellow !important;
+}
+
+/*[data-fretboard-note-label="G"],
+[data-key="G"] {
+    background-color: black !important;
+}*/
+
+[data-fretboard-note-label="G#"],
+[data-key="G#"] {
+    background-color: green !important;
+}
+
+[data-fretboard-note-label="A"],
+[data-key="A"] {
+    background-color: orange !important;
+}
+
+/*[data-fretboard-note-label="A#"],
+[data-key="A#"] {
+    background-color: black !important;
+}*/
+
+[data-fretboard-note-label="B"],
+[data-key="B"] {
+    background-color: purple !important;
+}
+
+.fretboard.invert-y {
+    transform: scale(1, -1);
+}
+
+.fretboard.invert-y .note {
+    transform: scale(1, -1);
+}
+
+.fretboard.invert-y .string:last-child .note {
+    border-bottom: 1px solid var(--clr-dark);
+    border-right: 1px solid var(--clr-dark);
+}
+
+.fretboard.invert-y .string:first-child .note {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.fretboard.invert-y .string:last-child .note:first-child {
+    border-right: 8px solid black;
+}
+
+.fretboard.invert-x.invert-y {
+    transform: scale(-1, -1);
+}
+
+.fretboard.invert-x.invert-y .note {
+    transform: scale(-1, -1);
+}
+
+.note-label {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--clr-light);
+    background-color: var(--clr-mid);
+    color: var(--clr-light);
+    position: relative;
+    border-radius: 100%;
+    display:inline-block;
+    top: 0;
+    transform: translateY(-50%);
+}
+
+.note-label.note-label--active {
+    background-color: var(--clr-light) !important;
+    color: var(--clr-black) !important;
+}
+
+.note-label:hover {
+    background-color: black;
+    color: white;
+}
+
+.note-name {
+    pointer-events: none;
+}
+
+.fretboard .note {
+    width: 8rem;
+    border: 1px solid var(--clr-dark);
+}
+
+.string .note:first-child {
+    border-left: none;
+    border-right: 8px solid black;
+}
+
+.string:last-child .note {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.note-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.keyboard-panel {
+    margin-top: 20rem;
+}
+
+.keyboard-container {
+    margin-top: 1rem;
+}
+
+.keyboard {
+    width: var(--keyboard-width);
+}
+
+.key {
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+.key.bottom {
+    border-left: var(--keyboard-border-width) solid var(--clr-light);
+    width: var(--bottom-key-width);
+    height: var(--keyboard-height);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.key.bottom:first-child {
+    border-left: none;
+}
+
+.key.bottom:hover {
+    background-color: blue;
+}
+
+.key.top {
+    width: var(--top-key-width);
+    height: var(--top-key-height);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    z-index: 2;
+}
+
+.key.top:hover {
+    background-color: var(--clr-mid);
+}
+
+.key.top,
+.key.x,
+.key.xii,
+.key.iii,
+.key.v,
+.key.viii {
+    margin-left: var(--top-key-offset);
+}
+
+.keyboard .note-names {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    bottom: 1rem;
+}
