@@ -87,62 +87,62 @@ body {
 
 /*[data-fretboard-note-label="C"],
 [data-key="C"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 [data-fretboard-note-label="C#"],
 [data-key="C#"] {
-    background-color: red !important;
+    background-color: #828282 !important;
 }
 
 /*[data-fretboard-note-label="D"],
 [data-key="D"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 [data-fretboard-note-label="D#"],
 [data-key="D#"] {
-    background-color: blue !important;
+    background-color: #828282 !important;
 }
 
 /*[data-fretboard-note-label="E"],
 [data-key="E"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 /*[data-fretboard-note-label="F"],
 [data-key="F"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 [data-fretboard-note-label="F#"],
 [data-key="F#"] {
-    background-color: yellow !important;
+    background-color: #828282 !important;
 }
 
 /*[data-fretboard-note-label="G"],
 [data-key="G"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 [data-fretboard-note-label="G#"],
 [data-key="G#"] {
-    background-color: green !important;
+    background-color: #828282 !important;
 }
 
 [data-fretboard-note-label="A"],
 [data-key="A"] {
-    background-color: orange !important;
+    background-color: #828282 !important;
 }
 
 /*[data-fretboard-note-label="A#"],
 [data-key="A#"] {
-    background-color: black !important;
+    background-color: #828282 !important;
 }*/
 
 [data-fretboard-note-label="B"],
 [data-key="B"] {
-    background-color: purple !important;
+    background-color: #828282 !important;
 }
 
 .fretboard.invert-y {
@@ -195,7 +195,7 @@ body {
 }
 
 .note-label:hover {
-    background-color: black;
+    background-color: blue !important;
     color: white;
 }
 
@@ -257,7 +257,7 @@ body {
 }
 
 .key.bottom:hover {
-    background-color: blue;
+    background-color: blue !important;
 }
 
 .key.top {
@@ -269,7 +269,7 @@ body {
 }
 
 .key.top:hover {
-    background-color: var(--clr-mid);
+    background-color: blue !important;
 }
 
 .key.top,
