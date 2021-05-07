@@ -50,16 +50,16 @@ const note_names = [
 ];
 
 
-const input_fretboard_invert_x = document.querySelector("[data-input-fretboard-invert-x]");
-const input_fretboard_invert_y = document.querySelector("[data-input-fretboard-invert-y]");
+const el_input_fretboard_inv_x = document.querySelector("[data-input-fretboard-inv-x]");
+const el_input_fretboard_inv_y = document.querySelector("[data-input-fretboard-inv-y]");
 const el_fretboard = document.querySelector("[data-fretboard]");
 const el_fretboard_markers = document.querySelector("[data-fretboard-markers]");
 
-input_fretboard_invert_x.addEventListener("change", function() {
+el_input_fretboard_inv_x.addEventListener("change", function() {
     invert_fretboard('x');
 });
 
-input_fretboard_invert_y.addEventListener("change", function() {
+el_input_fretboard_inv_y.addEventListener("change", function() {
     invert_fretboard('y');
 });
 
